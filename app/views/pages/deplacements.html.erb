@@ -1,4 +1,4 @@
-<h1>Mes déplacements</h1>
+<h1>Gestion des déplacements</h1>
 
 <%= form_tag "deplacements", method: "post" do %>
   <input type="text" name="from" placeholder="Départ"/>
@@ -7,14 +7,14 @@
   <input type="submit" value="Ajouter le déplacement"/>
 <% end %>
 
-<table>
+<table border="1">
   <thead>
     <tr>
-      <th>Mes déplacements</th>
+      <th colspan="3">Mes déplacements</th>
     </tr>
   </thead>
   <tbody>
-    <% @travels.each.do |travel| %>
+    <% @travels.each do |travel| %>
       <tr>
         <td><%= travel.from %></td>
         <td><%= travel.to %></td>
@@ -24,9 +24,3 @@
   </tbody>
 </table>
 
-
-<% @travels.each do |travel| %>
-  <p><%= travel.from %></p>
-  <p><%= travel.to %></p>
-  <p><%= travel.distance %></p>
-<% end %>
