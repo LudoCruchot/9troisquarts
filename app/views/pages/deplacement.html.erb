@@ -1,0 +1,14 @@
+<h1>Mes déplacements</h1>
+
+<%= form_tag "/deplacements", method: "post" do %>
+  <input type="text" name="from" placeholder="Départ"/>
+  <input type="text" name="to" placeholder="Arrivée"/>
+  <input type="text" name="distance" placeholder="Distance"/>
+  <input type="submit" value="Ajouter le déplacement"/>
+<% end %>
+
+<% @travels.each do |travel| %>
+  <p><%= travel.from %></p>
+  <p><%= travel.to %></p>
+  <p><%= travel.distance %></p>
+<% end %>
